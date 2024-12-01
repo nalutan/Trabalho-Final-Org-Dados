@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from sklearn.preprocessing import LabelEncoder
 
-df = pd.read_csv(r'StudentPerformanceFactors.csv')
+df = pd.read_csv(r'trabalhoFinal/StudentPerformanceFactors.csv')
 
 st.header('Dashboard: Performance de estudantes')
 st.write("Este painel interativo tem como objetivo mostrar a análise feita a partir de um dataset que traz dados sobre fatores de desempenho do aluno.")
@@ -57,16 +57,10 @@ st.write("O gráfico abaixo mostra a média dos estudantes em escolas públicas 
 
 st.bar_chart(grafico_qualidade)
 
-<<<<<<< HEAD
-st.write("A diferença média de pontos entre pessoas que tem acesso a Internet e pessoas que não tem acesso a Internet: 0.75 pontos no exame final. Logo, a Internet não é um grande impecílio para os estudos no contexto do dataset, uma vez que a diferença de pontos no exame final é pequena.")
-st.write("No contexto desse dataset, como podemos ver, a diferença de qualidade entre instituições de ensino públicas e instituições de ensino privada não é um fator que implica no rendimento dos alunos.")
-
 st.write(f"A diferença entre as médias dos alunos da privada e da pública é de: {round(media_privada - media_publica, 2)} pontos no exame final, uma diferença quase que irrelevante.")
-=======
 st.write("No contexto desse dataset, como podemos ver, a diferença de qualidade entre instituições de ensino públicas e instituições de ensino privada não é um fator que implica no rendimento dos alunos.")
 
 st.write(f"A diferença entre as médias dos alunos da privada e da pública é de: {round(media_privada - media_publica, 2)} pontos no exame final, uma diferença quase que irrelevante")
->>>>>>> fd825623f6273fee215ae508c6e2e75fa55d2018
 
 # Há diferença de disponibilidade de recursos educacionais entre estudantes de escolas públicas e privadas?
 st.write("#### 2.2. Há diferença de disponibilidade de recursos educacionais entre estudantes de escolas públicas e privadas?")
@@ -194,11 +188,7 @@ fig["Categorias"] = pd.Categorical(
 
 fig = fig.set_index("Categorias")
 
-<<<<<<< HEAD
 st.write("#### 3.3. As aulas de roforços geram resultados no desempenho dos alunos?")
-=======
-st.write("## 3.3. As aulas de roforços geram resultados no desempenho dos alunos?")
->>>>>>> fd825623f6273fee215ae508c6e2e75fa55d2018
 
 st.write("O Gráfico abaixo relaciona a quantidade de alunos com a quantidade de aulas de reforço semanais frequentadas.")
 st.bar_chart(fig)
@@ -222,7 +212,6 @@ st.bar_chart(fig)
 
 st.write("A partir disso, podemos concluir que aulas de reforço extra fazem diferença consideravel na nota final do estudantes, sendo seis aulas o 'Número ótimo', talvez sete aulas sejam demais, pois é necessário que o estudante tenha tempo para estudar sozinho.")
 
-<<<<<<< HEAD
 
 # Analisando horas de estudo e seu impacto
 
@@ -514,26 +503,4 @@ st.markdown("""
 - Alunos que vão a 95%-100% das aulas tendem a ter uma nota entre 68-72 pontos          
             """)
 st.write("Apenas ir a mais aulas (se estivermos falando de 1 semestre por exemplo, ir a mais 2 ou 3 aulas) pode ter render de 4 a 10 pontos a mais no exame final.")
-=======
-st.write("### 4.  Distribuição de notas no exame final")
-st.write("O gráfico abaixo mostra a distribuição de frequência de notas")
 
-data = {
-    "Notas": df["Exam_Score"]
-}
-
-notas = pd.DataFrame(data)
-
-
-# Criar o gráfico de distribuição
-fig, ax = plt.subplots(figsize=(8, 6))
-ax.hist(notas['Notas'], bins=45, color='blue', alpha=0.7)
-ax.set_title('Distribuição de Frequência de Notas')
-ax.set_xlabel('Nota')
-ax.set_ylabel('Frequência')
-
-# Mostrar o gráfico no Streamlit
-st.pyplot(fig)
-
-st.write("Vemos que nesse dataset, são muito comuns as notas entre 60-75 pontos no exame final e poquíssimas notas acima ou abaixo disso.")
->>>>>>> fd825623f6273fee215ae508c6e2e75fa55d2018
